@@ -5,8 +5,9 @@ console.log(dino);
 console.log(background);
 
 
-let isJumping = false
-const DINO_SPEED = 30;
+let isJumping = false;
+let position = 0;
+const DINO_SPEED = 20;
 const CACTUS_SPEED = 10;
 
 function handKeyUp(event) {
@@ -23,8 +24,6 @@ function handKeyUp(event) {
 
 
 function jump (){
-     let position = 0;
-
      isJumping = true;
      let upInterval = setInterval(() => {
           if (position >= 150){
@@ -59,13 +58,16 @@ function createCactos(){
           if (cactusPosition <= -60){
                clearInterval(leftInterval);
                background.removeChild(cactus);
+          }else if(cactusPosition > 0 && cactusPosition < 60 && position < 60){
+               clearInterval(leftInterval);
+               document.body.innerHTML = "<h1 class='game-over'>Game over</h1>"
           } else {
                cactusPosition -= CACTUS_SPEED;
                cactus.style.left = cactusPosition + 'px';
           }
      }, 20)
 
-     setTimeout(createCactos, randomTime)
+     let newCactus = setTimeout(createCactos, randomTime)
 }
 
 

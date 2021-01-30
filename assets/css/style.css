@@ -5,6 +5,8 @@
 }
 
 
+
+
 .background{
 }
 
@@ -24,4 +26,15 @@
      width: 60px;
      background-image: url("./../img/cactus.png");
      /* background-color: tomato; */
+}
+
+.game-over{
+     color: firebrick;
+     font-family: "Oswald";
+     font-size: 50px;
+     width: 100vw;
+     text-align: center;
+     position: relative;
+     top: 200px;
+
 }
