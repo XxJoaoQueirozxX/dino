@@ -11,14 +11,8 @@ const DINO_SPEED = 20;
 const CACTUS_SPEED = 10;
 
 function handKeyUp(event) {
-     switch (event.keyCode){
-          case 32:
-               if (!isJumping){
-                    jump()
-               }
-               break;
-          default:
-               console.log("outra tecla");
+     if (event.keyCode == 32 && !isJumping){
+          jump()
      }
 }
 
@@ -26,7 +20,7 @@ function handKeyUp(event) {
 function jump (){
      isJumping = true;
      let upInterval = setInterval(() => {
-          if (position >= 150){
+          if (position >= 200){
                clearInterval(upInterval)
                let downInterval = setInterval(() =>{
                     if (position >= 20){
@@ -47,7 +41,7 @@ function jump (){
 
 function createCactos(){
      const cactus = document.createElement("div");
-     const randomTime = Math.random() * 4000;
+     const randomTime = Math.random() * 6000;
 
      let cactusPosition = 1000;
      cactus.classList.add("cactus")
