@@ -1,0 +1,1 @@
+# Jogo do dinnosaurinho desenvolvido utilizando HTML, CSS e JS
